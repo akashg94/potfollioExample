@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Akash Ghosh - Software Engineer & Data Analytics Specialist Portfolio">
+    <meta name="author" content="Akash Ghosh">
+    <title>Akash Ghosh — Engineer & Data Specialist</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230066CC'/%3E%3Ctext x='50' y='65' font-family='Arial' font-size='50' font-weight='bold' fill='white' text-anchor='middle'%3EAG%3C/text%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-text">AG</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="nav-logo-text">AKASH</span>
+                <span class="nav-logo-dot">.</span>
+                <span class="nav-logo-text-alt">GHOSH</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link"><span class="nav-num">01</span>About</a></li>
+                <li><a href="#experience" class="nav-link"><span class="nav-num">02</span>Experience</a></li>
+                <li><a href="#projects" class="nav-link"><span class="nav-num">03</span>Projects</a></li>
+                <li><a href="#skills" class="nav-link"><span class="nav-num">04</span>Skills</a></li>
+                <li><a href="#contact" class="nav-link"><span class="nav-num">05</span>Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <canvas id="particles"></canvas>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge fade-up">
+                    <span class="hero-badge-dot"></span>
+                    <span>Available for new opportunities</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-line fade-up">Hi, I'm</span>
+                    <span class="hero-title-line hero-name fade-up">Akash Ghosh<span class="hero-period">.</span></span>
+                    <span class="hero-title-line hero-subtitle fade-up">I build <span class="rotate-text" id="rotate-text">scalable systems</span></span>
+                </h1>
+                <p class="hero-desc fade-up">
+                    Software Engineer with <span class="hero-highlight">7+ years</span> crafting automation solutions for Fortune 500 clients. Currently advancing my expertise in <span class="hero-highlight">Data Analytics & Engineering</span> at Northeastern University.
+                </p>
+                <div class="hero-cta fade-up">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+                <div class="hero-socials fade-up">
+                    <a href="https://github.com/akashg94" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/akash-ghosh-bc2020/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:Akashghosh.nyc@gmail.com" class="social-link" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window fade-in">
+                    <div class="code-header">
+                        <div class="code-dots"><span></span><span></span><span></span></div>
+                        <div class="code-filename">akash.js</div>
+                    </div>
+                    <div class="code-body">
+                        <pre><code><span class="code-comment">// developer profile</span>
+<span class="code-keyword">const</span> <span class="code-var">akash</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">'Akash Ghosh'</span>,
+  <span class="code-prop">role</span>: <span class="code-string">'Software Engineer'</span>,
+  <span class="code-prop">location</span>: <span class="code-string">'New York City'</span>,
+  <span class="code-prop">experience</span>: <span class="code-number">7</span>,
+  <span class="code-prop">stack</span>: [
+    <span class="code-string">'Java'</span>, <span class="code-string">'Python'</span>, <span class="code-string">'C#'</span>,
+    <span class="code-string">'SQL'</span>, <span class="code-string">'AWS'</span>, <span class="code-string">'React'</span>
+  ],
+  <span class="code-prop">currentlyLearning</span>: <span class="code-string">'ML & Analytics'</span>,
+  <span class="code-prop">passion</span>: <span class="code-string">'Building things'</span>
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll</span>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">01</span>
+                <h2 class="section-title">About <span class="title-accent">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <p class="about-lead">
+                        I'm a passionate Software Engineer based in New York City, transforming complex challenges into elegant solutions.
+                    </p>
+                    <p class="about-text">
+                        Over the past 7+ years, I've architected automation frameworks and built systems for industry leaders like <strong>JP Morgan</strong>, <strong>Wells Fargo</strong>, and <strong>Bank of America</strong>. My work spans automation engineering, data analytics, and full-stack development.
+                    </p>
+                    <p class="about-text">
+                        Currently pursuing my <strong>MS in Data Analytics and Engineering</strong> at Northeastern University, I'm bridging the gap between traditional software engineering and modern data science—building systems that don't just work, but learn and adapt.
+                    </p>
+                    <div class="about-tags">
+                        <span class="tag">Problem Solver</span>
+                        <span class="tag">System Thinker</span>
+                        <span class="tag">Continuous Learner</span>
+                        <span class="tag">Detail-Oriented</span>
+                    </div>
+                </div>
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <div class="stat-num" data-count="7">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num" data-count="40">0</div>
+                        <div class="stat-plus">+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num" data-count="99">0</div>
+                        <div class="stat-plus">%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num" data-count="4">0</div>
+                        <div class="stat-plus"></div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">02</span>
+                <h2 class="section-title">Where I've <span class="title-accent">Worked</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Jan 2022 — Present</span>
+                            <span class="timeline-tag current">Current Role</span>
+                        </div>
+                        <h3 class="timeline-role">Lead Software/Hardware Engineer</h3>
+                        <h4 class="timeline-company">Parabit Systems, NY</h4>
+                        <p class="timeline-desc">Leading enterprise solutions for JP Morgan, Wells Fargo, and Bank of America. Architect automation frameworks reducing manual work by 40%.</p>
+                        <ul class="timeline-list">
+                            <li>Engineer API validation systems ensuring 99%+ reliability</li>
+                            <li>Apply data analytics to drive optimization strategies</li>
+                            <li>Lead cross-functional teams across software, firmware, hardware</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span>Java</span><span>Selenium</span><span>REST Assured</span><span>WinAppDriver</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Aug 2021 — Jan 2022</span>
+                        </div>
+                        <h3 class="timeline-role">Software Engineer</h3>
+                        <h4 class="timeline-company">Battleface, Ohio</h4>
+                        <p class="timeline-desc">Built CI/CD pipelines and automation frameworks in an Agile startup environment.</p>
+                        <ul class="timeline-list">
+                            <li>Improved deployment efficiency by 30%</li>
+                            <li>Implemented Docker, Kubernetes, TeamCity infrastructure</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span>Python</span><span>Docker</span><span>Kubernetes</span><span>TeamCity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Jun 2020 — Jul 2021</span>
+                        </div>
+                        <h3 class="timeline-role">Quality Engineer</h3>
+                        <h4 class="timeline-company">T-Cetra, Ohio</h4>
+                        <p class="timeline-desc">Built robust validation frameworks in fast-paced Agile sprints.</p>
+                        <ul class="timeline-list">
+                            <li>Developed Selenium/Cucumber frameworks with Java/C#</li>
+                            <li>Performed API validation and SQL data analysis</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span>Java</span><span>C#</span><span>Selenium</span><span>Cucumber</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Aug 2018 — Jun 2020</span>
+                        </div>
+                        <h3 class="timeline-role">Software Engineer in Test</h3>
+                        <h4 class="timeline-company">PNC Bank, New York</h4>
+                        <p class="timeline-desc">Designed automation infrastructure for major banking platform.</p>
+                        <ul class="timeline-list">
+                            <li>Configured TestNG with Jenkins for nightly automation</li>
+                            <li>Conducted API testing and SQL data validation</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span>Java</span><span>Selenium</span><span>TestNG</span><span>Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">03</span>
+                <h2 class="section-title">Selected <span class="title-accent">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="cloud">Cloud & Data</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card reveal" data-category="fullstack">
+                    <div class="project-num">01</div>
+                    <div class="project-icon" style="--icon-color: #0066CC;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3 class="project-title">Wander Map Tracker</h3>
+                    <p class="project-desc">Full-stack travel journal with interactive maps. Users log trips, add photos, and visualize their travel history with geolocation.</p>
+                    <div class="project-tech">
+                        <span>React</span><span>Flask</span><span>MySQL</span><span>Google Places API</span>
+                    </div>
+                    <a href="https://github.com/akashg94/wander-Map-Tracker" target="_blank" rel="noopener" class="project-link">
+                        <span>View on GitHub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </article>
+
+                <article class="project-card reveal" data-category="cloud">
+                    <div class="project-num">02</div>
+                    <div class="project-icon" style="--icon-color: #10B981;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                    </div>
+                    <h3 class="project-title">Real Estate Data Pipeline</h3>
+                    <p class="project-desc">Cloud-native data pipeline for real estate price prediction. Integrates Zillow data with US Census demographics through AWS services.</p>
+                    <div class="project-tech">
+                        <span>AWS S3</span><span>Lambda</span><span>Glue</span><span>Athena</span><span>QuickSight</span>
+                    </div>
+                    <a href="https://github.com/akashg94/Real-Estate-Data-analysis-with-AWS-Data-Pipeline-Project" target="_blank" rel="noopener" class="project-link">
+                        <span>View on GitHub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </article>
+
+                <article class="project-card reveal" data-category="ml">
+                    <div class="project-num">03</div>
+                    <div class="project-icon" style="--icon-color: #F59E0B;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <h3 class="project-title">Stock Market ML Prediction</h3>
+                    <p class="project-desc">Machine learning models for stock price forecasting. Applied regression algorithms and time series analysis to predict market patterns.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>pandas</span><span>scikit-learn</span><span>NumPy</span>
+                    </div>
+                    <a href="https://github.com/akashg94/StockMarketAnalysisAndMLPrediction" target="_blank" rel="noopener" class="project-link">
+                        <span>View on GitHub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </article>
+
+                <article class="project-card reveal" data-category="fullstack">
+                    <div class="project-num">04</div>
+                    <div class="project-icon" style="--icon-color: #8B5CF6;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                    </div>
+                    <h3 class="project-title">Travel Price Tracker</h3>
+                    <p class="project-desc">Automated price monitoring for flights and hotels. Web scraping system tracks historical pricing trends and alerts users on optimal booking times.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>BeautifulSoup</span><span>Flask</span><span>SQLite</span>
+                    </div>
+                    <a href="https://github.com/akashg94/travel-price-tracker" target="_blank" rel="noopener" class="project-link">
+                        <span>View on GitHub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </article>
+
+                <article class="project-card reveal" data-category="database">
+                    <div class="project-num">05</div>
+                    <div class="project-icon" style="--icon-color: #EC4899;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <h3 class="project-title">Travel Insurance Database</h3>
+                    <p class="project-desc">PostgreSQL database design for insurance management with normalized schema, ETL processes, and OLAP data warehouse for business analytics.</p>
+                    <div class="project-tech">
+                        <span>PostgreSQL</span><span>Talend</span><span>ETL</span><span>Data Warehouse</span>
+                    </div>
+                    <a href="https://github.com/akashg94/Database-Management-Project---Explore-Secure-Travel-Insurance" target="_blank" rel="noopener" class="project-link">
+                        <span>View on GitHub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </article>
+
+                <article class="project-card reveal" data-category="ml">
+                    <div class="project-num">06</div>
+                    <div class="project-icon" style="--icon-color: #14B8A6;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="project-title">Activity Monitoring (Time Series)</h3>
+                    <p class="project-desc">Time series analysis for human activity recognition using sensor data. Implemented LSTM neural networks for pattern detection and anomaly identification.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>TensorFlow</span><span>LSTM</span><span>Time Series</span>
+                    </div>
+                    <a href="https://github.com/akashg94/Time-Series-for-Human-Activity-Monitoring" target="_blank" rel="noopener" class="project-link">
+                        <span>View on GitHub</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </article>
+            </div>
+
+            <div class="projects-cta reveal">
+                <p>Want to see more? Check out my complete portfolio on GitHub.</p>
+                <a href="https://github.com/akashg94" target="_blank" rel="noopener" class="btn btn-primary">
+                    <span>View All Repositories</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">04</span>
+                <h2 class="section-title">Skills & <span class="title-accent">Tools</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <div class="skill-icon-wrap"><span class="skill-num">{ }</span></div>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C#</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <div class="skill-icon-wrap"><span class="skill-num">[ ]</span></div>
+                        <h3>Frameworks</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Selenium</span>
+                        <span class="skill-item">TestNG</span>
+                        <span class="skill-item">Cucumber</span>
+                        <span class="skill-item">Pytest</span>
+                        <span class="skill-item">REST Assured</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Flask</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <div class="skill-icon-wrap"><span class="skill-num">⚙</span></div>
+                        <h3>DevOps & Cloud</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Kubernetes</span>
+                        <span class="skill-item">Jenkins</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">CI/CD</span>
+                        <span class="skill-item">Git</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <div class="skill-icon-wrap"><span class="skill-num">▦</span></div>
+                        <h3>Data & Databases</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Data Analysis</span>
+                        <span class="skill-item">ETL</span>
+                        <span class="skill-item">Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education & Certifications -->
+            <div class="edu-cert-grid">
+                <div class="edu-block reveal">
+                    <h3 class="edu-block-title">Education</h3>
+                    <div class="edu-card">
+                        <div class="edu-degree">M.S. Data Analytics & Engineering</div>
+                        <div class="edu-school">Northeastern University, Boston</div>
+                        <div class="edu-date">Jan 2025 — Present</div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-degree">B.S. Computer Information Systems</div>
+                        <div class="edu-school">Brooklyn College, New York · Cum Laude</div>
+                        <div class="edu-date">Minor in Computer Science</div>
+                    </div>
+                </div>
+                <div class="cert-block reveal">
+                    <h3 class="edu-block-title">Certifications</h3>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-badge">G</div>
+                            <div>
+                                <div class="cert-name">Google Data Analytics</div>
+                                <div class="cert-issuer">Professional Certificate</div>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">G</div>
+                            <div>
+                                <div class="cert-name">Foundation of Data Science</div>
+                                <div class="cert-issuer">Google</div>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">G</div>
+                            <div>
+                                <div class="cert-name">Bits and Bytes of Computer Networking</div>
+                                <div class="cert-issuer">Google</div>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-badge">G</div>
+                            <div>
+                                <div class="cert-name">Technical Support Fundamentals</div>
+                                <div class="cert-issuer">Google</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">05</span>
+                <h2 class="section-title">Let's <span class="title-accent">Connect</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content reveal">
+                <h3 class="contact-headline">Have a project in mind?</h3>
+                <p class="contact-subheadline">I'm always open to discussing new opportunities, interesting projects, or just having a conversation about technology.</p>
+                <div class="contact-cards">
+                    <a href="mailto:Akashghosh.nyc@gmail.com" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="contact-card-label">Email</div>
+                        <div class="contact-card-value">Akashghosh.nyc@gmail.com</div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/akash-ghosh-bc2020/" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <div class="contact-card-label">LinkedIn</div>
+                        <div class="contact-card-value">akash-ghosh-bc2020</div>
+                    </a>
+                    <a href="https://github.com/akashg94" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </div>
+                        <div class="contact-card-label">GitHub</div>
+                        <div class="contact-card-value">akashg94</div>
+                    </a>
+                    <a href="tel:6466479491" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-card-label">Phone</div>
+                        <div class="contact-card-value">646-647-9491</div>
+                    </a>
+                </div>
+                <a href="mailto:Akashghosh.nyc@gmail.com" class="btn btn-primary btn-large">
+                    <span>Say Hello</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Akash Ghosh<span>.</span></div>
+                    <p>Built with care in New York City</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/akashg94" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/akash-ghosh-bc2020/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="mailto:Akashghosh.nyc@gmail.com" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <div class="footer-copy">
+                    <p>© <span id="year"></span> Akash Ghosh. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
