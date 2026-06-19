@@ -135,10 +135,10 @@ counters.forEach(counter => counterObserver.observe(counter));
 const rotateText = document.getElementById('rotate-text');
 const words = [
     'scalable systems',
+    'test automation',
     'data pipelines',
-    'automation tools',
-    'cloud solutions',
     'ML models',
+    'cloud solutions',
     'web applications'
 ];
 let wordIndex = 0;
